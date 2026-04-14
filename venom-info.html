@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فينوم اليوتيوبر - خدمات السوشيال ميديا والمونتاج الاحترافي</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cv-card {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .cv-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(145deg, #0a1a2f 0%, #1a2f4a 100%);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #00c3ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #00c3ff15 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .venom-logo {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(145deg, #1a2f4a, #0a1a2f);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 195, 255, 0.5);
+            border: 4px solid #00c3ff;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 195, 255, 0.5); }
+            50% { box-shadow: 0 10px 50px rgba(0, 195, 255, 0.8); }
+        }
+
+        .venom-logo i {
+            font-size: 4.5rem;
+            color: #00c3ff;
+            filter: drop-shadow(2px 4px 6px #000);
+        }
+
+        .profile-name {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 0 #00c3ff, 5px 5px 0 rgba(0,0,0,0.3);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            color: #00c3ff;
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 2px solid #00c3ff;
+            box-shadow: 0 5px 20px rgba(0,195,255,0.3);
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid #00c3ff;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge i {
+            color: #00c3ff;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+            background: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(145deg, #f0f9ff, #e6f3ff);
+            padding: 30px;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            border-right: 5px solid #00c3ff;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            color: #0a1a2f;
+            margin-bottom: 10px;
+        }
+
+        .hero-title i {
+            color: #00c3ff;
+            margin-left: 10px;
+        }
+
+        .hero-text {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .hero-highlight {
+            color: #00c3ff;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #00c3ff, #0077be);
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            border-color: #00c3ff;
+            box-shadow: 0 15px 40px rgba(0,195,255,0.3);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #00c3ff;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .section-title {
+            font-size: 2.2rem;
+            color: #0a1a2f;
+            margin-bottom: 25px;
+            position: relative;
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00c3ff, #0077be);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: #00c3ff;
+            box-shadow: 0 15px 40px rgba(0,195,255,0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #00c3ff;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Platform Tags */
+        .platforms-section {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .platforms-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .platform-tag {
+            background: linear-gradient(135deg, #00c3ff, #0077be);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0,195,255,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .platform-tag i {
+            font-size: 1.2rem;
+        }
+
+        /* Features List */
+        .features-list {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-right: 4px solid #00c3ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item i {
+            color: #00c3ff;
+            font-size: 1.2rem;
+        }
+
+        .feature-item span {
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: linear-gradient(145deg, #0a1a2f, #1a2f4a);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .why-title {
+            font-size: 2rem;
+            color: #00c3ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0,195,255,0.3);
+        }
+
+        .why-item i {
+            font-size: 2.5rem;
+            color: #00c3ff;
+            margin-bottom: 10px;
+        }
+
+        .why-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .why-item p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section - فقط واتساب */
+        .contact-section {
+            background: linear-gradient(145deg, #00c3ff, #0077be);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-phone {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            direction: ltr;
+        }
+
+        .contact-phone a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .contact-phone a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .contact-note {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a1a2f;
+            padding: 20px;
+            text-align: center;
+            color: #a0aec0;
+            border-top: 3px solid #00c3ff;
+        }
+
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            .profile-title {
+                font-size: 1.1rem;
+            }
+            .main-content {
+                padding: 20px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .contact-phone {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-card">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="venom-logo">
+                    <i class="fas fa-skull"></i>
+                </div>
+            </div>
+            <h1 class="profile-name">فينوم اليوتيوبر</h1>
+            <div class="profile-title">
+                <i class="fas fa-crown"></i>
+                ملك خدمات السوشيال ميديا في مصر
+            </div>
+            <div class="badge-container">
+                <span class="badge"><i class="fas fa-map-marker-alt"></i> مصر</span>
+                <span class="badge"><i class="fas fa-rocket"></i> أسرع تنفيذ</span>
+                <span class="badge"><i class="fas fa-headset"></i> دعم 24/7</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h2 class="hero-title">
+                    <i class="fas fa-star"></i>
+                    أقوى خدمات السوشيال ميديا في مصر
+                    <i class="fas fa-star"></i>
+                </h2>
+                <p class="hero-text">
+                    🚀 <span class="hero-highlight">فينوم اليوتيوبر</span> يقدم لك أقوى وأسرع خدمات الرشق لجميع منصات التواصل الاجتماعي
+                </p>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number">+100</div>
+                    <div class="stat-label">عميل سعيد</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="stat-number">+500</div>
+                    <div class="stat-label">خدمة منفذة</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">دعم فوري</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-number">ضمان</div>
+                    <div class="stat-label">على الرشق</div>
+                </div>
+            </div>
+
+            <!-- Platforms Section -->
+            <div class="platforms-section">
+                <h2 class="section-title">نوفر رشق لجميع المنصات</h2>
+                <div class="platforms-grid">
+                    <span class="platform-tag"><i class="fab fa-instagram"></i> Instagram</span>
+                    <span class="platform-tag"><i class="fab fa-tiktok"></i> TikTok</span>
+                    <span class="platform-tag"><i class="fab fa-telegram"></i> Telegram</span>
+                    <span class="platform-tag"><i class="fab fa-youtube"></i> YouTube</span>
+                    <span class="platform-tag"><i class="fab fa-twitter"></i> Twitter (X)</span>
+                    <span class="platform-tag"><i class="fab fa-soundcloud"></i> SoundCloud</span>
+                    <span class="platform-tag"><i class="fab fa-spotify"></i> Spotify</span>
+                </div>
+            </div>
+
+            <!-- Main Services Grid -->
+            <h2 class="section-title">خدماتنا المتميزة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="service-title">توثيق الحسابات</div>
+                    <div class="service-desc">خدمة توثيق شهرية لجميع المنصات</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <div class="service-title">رشق متابعين</div>
+                    <div class="service-desc">لكل مواقع التواصل الاجتماعي - متابعين حقيقيين</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-eye"></i></div>
+                    <div class="service-title">مشاهدات مقاطع</div>
+                    <div class="service-desc">لمقاطع الفيديو على جميع المنصات</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    <div class="service-title">لايكات</div>
+                    <div class="service-desc">إعجابات حقيقية لمنشوراتك</div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="features-list">
+                <h3 style="font-size: 1.5rem; color: #0a1a2f; margin-bottom: 20px; text-align: center;">
+                    <i class="fas fa-gem" style="color: #00c3ff;"></i>
+                    خدمات إضافية مميزة
+                </h3>
+                <div class="features-grid">
+                    <div class="feature-item"><i class="fas fa-newspaper"></i><span>تنزيل أخبار في الجرائد</span></div>
+                    <div class="feature-item"><i class="fab fa-google"></i><span>ظهور اسمك على Google</span></div>
+                    <div class="feature-item"><i class="fab fa-tiktok"></i><span>عملات TikTok</span></div>
+                    <div class="feature-item"><i class="fas fa-face-smile"></i><span>ريأكتات فيسبوك</span></div>
+                    <div class="feature-item"><i class="fas fa-eye"></i><span>مشاهدات فيسبوك</span></div>
+                    <div class="feature-item"><i class="fas fa-crown"></i><span>اشتراكات شهرية: CapCut / Canva / ChatGPT</span></div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #00c3ff; font-weight: bold; font-size: 1.2rem;">
+                    والمزيد من الخدمات... ✨
+                </p>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="why-choose-us">
+                <h3 class="why-title">لماذا تختار فينوم اليوتيوبر؟</h3>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>أسرع تنفيذ</h4>
+                        <p>خدماتنا بتنفذ في أسرع وقت</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>ضمان الجودة</h4>
+                        <p>جميع خدماتنا مضمونة 100%</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>دعم فني</h4>
+                        <p>فريق دعم جاهز 24 ساعة</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-lock"></i>
+                        <h4>أمان تام</h4>
+                        <p>بياناتك في أمان تام</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section - فقط واتساب -->
+            <div class="contact-section">
+                <h3 class="contact-title"><i class="fab fa-whatsapp"></i> للتواصل مع فينوم اليوتيوبر</h3>
+                <div class="contact-phone">
+                    <a href="https://wa.me/201143332968"><i class="fab fa-whatsapp"></i> +201143332968</a>
+                </div>
+                <div class="contact-note">
+                    <i class="fas fa-clock"></i> متاح 24 ساعة - الرد فوري
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 فينوم اليوتيوبر - جميع الحقوق محفوظة</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">أسرع خدمات السوشيال ميديا في مصر</p>
+        </div>
+    </div>
+</body>
+</html>
